@@ -8,10 +8,10 @@ install:
 - mv ninja $GOPATH/bin
 
 script:
-- cd $GOPATH/src/github.com/KPI-Labs/design-lab-2/build
+- cd $GOPATH/src/github.com/stormtrooper01/cse2_lab1/build
 - sudo chmod +x my-bood-initial
 - ./my-bood-initial
 - mv -f my-build.bood build.bood 
 - ./out/bin/bood 
-- cat out/bin/test.txt 
+- cat out/bin/bood 
 - ./out/bin/bood 
