@@ -1,9 +1,23 @@
-go_binary {
+go_tested_binary {
   // Module (and output) name.
   name: "bood",
 
   // Go package to build.
   pkg: "github.com/stormtrooper01/cse2_lab1/build/cmd/bood",
+
+  // Go package to test.
+  testPkg: "github.com/stormtrooper01/cse2_lab1/build/gomodule",
+
+  // Build inputs.
+  srcs: ["**/*.go", "../go.mod"]
+}
+
+go_test_coverage {
+  // Module (and output) name.
+  name: "bood-coverage",
+
+  // Go package to build.
+  pkg: "./...",
 
   // Build inputs.
   srcs: ["**/*.go", "../go.mod"]
