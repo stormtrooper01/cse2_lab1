@@ -14,7 +14,7 @@ go_tested_binary {
 
 go_test_coverage {
   // Module (and output) name.
-  name: "bood-coverage",
+  name: "test-coverage-example",
 
   // Go package to build.
   pkg: "./...",
