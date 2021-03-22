@@ -1,21 +1,17 @@
 language: go
-go:
-- '1.15'
-before_install:
-- wget https://github.com/ninja-build/ninja/releases/download/v1.10.2/ninja-linux.zip
+
+go: "1.15"
+
+install:
+- wget https://github.com/ninja-build/ninja/releases/download/v1.10.0/ninja-linux.zip
 - sudo unzip ninja-linux.zip
-- sudo mv ninja /usr/local/bin
+- mv ninja $GOPATH/bin
+
 script:
-- go build ./build/cmd/bood
-- sudo mv ./bood /usr/local/bin
-- cd ./build
-- bood
-- cd ../example
-- bood
-deploy:
-  provider: releases
-  api_key: "$GH_AUTH"
-  skip_cleanup: true
-  file: "/usr/local/bin/bood"
-  on:
-    tags: true
+- cd $GOPATH/src/github.com/KPI-Labs/design-lab-2/build
+- sudo chmod +x my-bood-initial
+- ./my-bood-initial
+- mv -f my-build.bood build.bood 
+- ./out/bin/bood 
+- cat out/bin/test.txt 
+- ./out/bin/bood 
